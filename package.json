@@ -1,0 +1,33 @@
+{
+  "name": "tsa",
+  "version": "1.0.0",
+  "description": "Tweeter sentimental analysis",
+  "main": "app.js",
+  "scripts": {
+    "test": "none",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "tweeter",
+    "sentimental",
+    "analysis",
+    "opinion",
+    "mining",
+    "analysis",
+    "opinions",
+    "twitter",
+    "sentiment",
+    "views"
+  ],
+  "author": "Sudhanshu Bhogal",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.1.0",
+    "ejs": "^2.6.2",
+    "express": "^4.17.1"
+  }
+}
