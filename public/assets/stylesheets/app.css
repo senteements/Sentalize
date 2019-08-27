@@ -9,6 +9,13 @@ body {
 	-webkit-background-clip: text;
 	-webkit-text-fill-color: transparent;
 }
+#load{
+	width:100%;
+	height:100%;
+    position:fixed;
+    z-index:9999;
+	background:rgba(0,0,0,0.8)
+}
 
 
 
