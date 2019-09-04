@@ -1,0 +1,18 @@
+body {
+  background-color: #2197fd;
+  background-image: linear-gradient(268deg, #2197fd 34%, #2152ff 79%);
+}
+#topic {
+  font-size: 72px;
+  font-weight: bold;
+  background: linear-gradient(270deg, #f5cd4c 38%, #ff2c2c 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#load {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.8);
+}
