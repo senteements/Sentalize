@@ -46,9 +46,9 @@ app.get("/analyze", (req, res) => {
     process.env.FLASKSERVERURL + "/analyze?query=" + query + "&count=" + count,
     function(err, response, body) {
       if (!err && response.statusCode === 200) {
-        console.log("tweets : " + body); // Print the json response
         tweetsjson = JSON.parse(body);
-        res.json({ text: tweetsjson });
+        console.log(tweetsjson);
+        res.json(tweetsjson);
       }
     }
   );
