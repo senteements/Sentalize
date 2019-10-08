@@ -1,4 +1,10 @@
 <% include partials/header %>
+
+<script
+  type="text/javascript"
+  src="https://www.gstatic.com/charts/loader.js"
+></script>
+
 <div class="container pt-4">
   <h1 class="display-1 text-center mb-5" id="topic">
     Sentiment Analyzer
@@ -22,10 +28,10 @@
             <input
               type="range"
               class="custom-range"
-              min="1000"
-              max="50000"
+              min="10"
+              max="100"
               step="1"
-              value="10000"
+              value="14"
               id="tweetsrange"
             />
           </div>
@@ -35,7 +41,7 @@
               class="form-control"
               name="ntwts"
               id="numoftwtsinput"
-              value="10000"
+              value="14"
             />
           </div>
         </div>
@@ -49,65 +55,65 @@
         </div>
       </form>
     </div>
-    <div class="col-md-7 text-center bg-light rounded-lg">
+    <div class="col-md-7 bg-light rounded-lg">
       <nav>
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
           <a
             class="nav-item nav-link active"
-            id="nav-toptweets-tab"
+            id="nav-analysis-tab"
             data-toggle="tab"
-            href="#nav-toptweets"
+            href="#nav-analysis"
             role="tab"
-            aria-controls="nav-toptweets"
+            aria-controls="nav-analysis"
             aria-selected="true"
-            >Top Tweets</a
+            >Analysis</a
           >
           <a
             class="nav-item nav-link"
-            id="nav-wordcloud-tab"
+            id="nav-toppostweets-tab"
             data-toggle="tab"
-            href="#nav-wordcloud"
+            href="#nav-toppostweets"
             role="tab"
-            aria-controls="nav-wordcloud"
+            aria-controls="nav-toppostweets"
             aria-selected="false"
-            >Word Cloud</a
+            >Top +ve tweets</a
           >
           <a
             class="nav-item nav-link"
-            id="nav-histogram-tab"
+            id="nav-topnegtweets-tab"
             data-toggle="tab"
-            href="#nav-histogram"
+            href="#nav-topnegtweets"
             role="tab"
-            aria-controls="nav-histogram"
+            aria-controls="nav-topnegtweets"
             aria-selected="false"
-            >Histogram</a
+            >Top -ve tweets</a
           >
         </div>
       </nav>
       <div class="tab-content" id="nav-tabContent">
         <div
           class="tab-pane fade show active"
-          id="nav-toptweets"
+          id="nav-analysis"
           role="tabpanel"
-          aria-labelledby="nav-toptweets-tab"
+          aria-labelledby="nav-analysis-tab"
         >
-          Top Tweets over here
+          <div id="piechart"></div>
         </div>
         <div
           class="tab-pane fade"
-          id="nav-wordcloud"
+          id="nav-toppostweets"
           role="tabpanel"
-          aria-labelledby="nav-wordcloud-tab"
+          aria-labelledby="nav-toppostweets-tab"
         >
-          Word Cloud over here
+          Top positive tweets over here
         </div>
         <div
           class="tab-pane fade"
-          id="nav-histogram"
+          id="nav-topnegtweets"
           role="tabpanel"
-          aria-labelledby="nav-histogram-tab"
+          aria-labelledby="nav-topnegtweets-tab"
         >
-          Histogram over here
+          Top negative over here
         </div>
       </div>
     </div>
