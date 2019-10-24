@@ -26,19 +26,20 @@ app.get("/analyze", (req, res) => {
   var query = req.query.searchtrend;
   var count = req.query.ntwts;
 
-  // request(
-  //   process.env.FLASKSERVERURL + "/analyze?query=" + query + "&count=" + count,
-  //   function(err, response, body) {
-  //     if (!err && response.statusCode === 200) {
-  //       tweetsAnalysis = JSON.parse(body);
-  //       console.log(tweetAnalysis);
-  //       res.json(tweetAnalysis);
-  //     }
-  //   }
-  // );
-  // uncomment below for using original api
-  var tweetAnalysis = seeds;
-  res.json(tweetAnalysis);
+  request(
+    process.env.FLASKSERVERURL + "/analyze?query=" + query + "&count=" + count,
+    function(err, response, body) {
+      if (!err && response.statusCode === 200) {
+        var tweetsAnalysis = JSON.parse(body);
+        console.log(tweetsAnalysis);
+        res.json(tweetsAnalysis);
+      }
+    }
+  );
+
+  // to get data from the seeds file for testing purposes
+  // var tweetAnalysis = seeds;
+  // res.json(tweetAnalysis);
 });
 
 app.listen(process.env.PORT, process.env.IP, () => {
