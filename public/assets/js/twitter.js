@@ -44,14 +44,21 @@ function runAnalyzer() {
       }
       var postweets = "";
       var negtweets = "";
+      var tempt;
       for (var i = 0; i < jsondata.ptweets.length; i++) {
-        postweets +=
-          "" + (i + 1) + ") " + jsondata.ptweets[i].text + "<br><br>";
+        tempt = jsondata.ptweets[i].text;
+        if(tempt.substring(0,2)==="RT"){
+          tempt = tempt.substring(3);
+        }
+        postweets += "" + (i + 1) + ") " + tempt + "<br><br>";
       }
       toppostweetstab.innerHTML = postweets;
       for (var i = 0; i < jsondata.ntweets.length; i++) {
-        negtweets +=
-          "" + (i + 1) + ") " + jsondata.ntweets[i].text + "<br><br>";
+        tempt = jsondata.ntweets[i].text;
+        if(tempt.substring(0,2)==="RT"){
+          tempt = tempt.substring(3);
+        }
+        negtweets += "" + (i + 1) + ") " + tempt + "<br><br>";
       }
       topnegtweetstab.innerHTML = negtweets;
       return;
