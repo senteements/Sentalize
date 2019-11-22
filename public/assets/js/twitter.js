@@ -26,11 +26,13 @@ function runAnalyzer() {
       google.charts.setOnLoadCallback(drawChart);
 
       function drawChart() {
+        var ptp = jsondata.ptpercentage + 0.5 * jsondata.neutpercentage;
+        var ntp = jsondata.ntpercentage + 0.5 * jsondata.neutpercentage;
         var data = google.visualization.arrayToDataTable([
           ["Sentiment", "%tage"],
-          ["Positive", parseInt(jsondata.ptpercentage)],
-          ["Negative", parseInt(jsondata.ntpercentage)],
-          ["Neutral", parseInt(jsondata.neutpercentage)]
+          ["Positive", parseInt(ptp)],
+          ["Negative", parseInt(ntp)]
+          // ["Neutral", parseInt(jsondata.neutpercentage)]
         ]);
 
         var options = { title: "Sentiments", width: 600, height: 400 };
