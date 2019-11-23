@@ -32,7 +32,6 @@ function runAnalyzer() {
           ["Sentiment", "%tage"],
           ["Positive", parseInt(ptp)],
           ["Negative", parseInt(ntp)]
-          // ["Neutral", parseInt(jsondata.neutpercentage)]
         ]);
 
         var options = { title: "Sentiments", width: 600, height: 400 };
